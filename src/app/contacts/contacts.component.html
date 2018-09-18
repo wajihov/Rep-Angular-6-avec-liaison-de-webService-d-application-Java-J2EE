@@ -2,7 +2,22 @@
   <div class="panel panel-primary">
     <div class="panel-heading">L'entete</div>
     <div class="panel-body">
-      Contact
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>E-Mail</th>
+          <th>Date Naissance</th>
+        </tr>
+        <tr *ngFor="let c of pageContacts?.content">
+          <td>{{c.id}}</td>
+          <td>{{c.nom}}</td>
+          <td>{{c.prenom}}</td>
+          <td>{{c.email}}</td>
+          <td>{{c.dateNAissance}}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

@@ -5,6 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AboutComponent } from './about/about.component';
+import {RouterModule, Routes} from "@angular/router";
+import {HttpModule} from "@angular/http";
+
+
+const appRoutes: Routes = [
+  { path: 'about' ,  component: AboutComponent},
+  { path: 'contact', component: ContactsComponent  },
+  { path: '',redirectTo: '/about', pathMatch: 'full'}
+  ];
 
 
 @NgModule({
@@ -14,7 +23,7 @@ import { AboutComponent } from './about/about.component';
     AboutComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, RouterModule.forRoot(appRoutes), HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
